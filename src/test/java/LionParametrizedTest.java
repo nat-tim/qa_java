@@ -1,3 +1,4 @@
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
@@ -5,14 +6,15 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class LionTestParametrized {
+public class LionParametrizedTest {
 
     private final String sex;
-    private final boolean Mane;
+    private final boolean mane;
 
-    public LionTestParametrized(String sex, boolean Mane) {
+    public LionParametrizedTest(String sex, boolean mane) {
         this.sex = sex;
-        this.Mane = Mane;
+        this.mane = mane;
+
     }
     @Parameterized.Parameters
     public static Object[][] getCredentials() {
@@ -22,9 +24,9 @@ public class LionTestParametrized {
         };
     }
     @Test
-    public void assertHaveManeWhenCallDoesHaveMane()throws Exception{
-        Lion lion = new Lion(sex);
-        Assert.assertEquals(lion.doesHaveMane(), Mane);
+    public void assertHaveManeWhenCallDoesHaveMane() throws Exception{
+        Lion lion = new Lion(sex, new Feline());
+        Assert.assertEquals(lion.doesHaveMane(), mane);
 
     }
 

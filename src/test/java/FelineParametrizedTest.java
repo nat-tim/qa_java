@@ -3,15 +3,14 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.mockito.Mockito;
 
 @RunWith(Parameterized.class)
-public class FelineTestParametrized {
+public class FelineParametrizedTest {
 
     private final int countKittens;
     private final int countKittensExpected;
 
-    public FelineTestParametrized(int countKittens, int countKittensExpected) {
+    public FelineParametrizedTest(int countKittens, int countKittensExpected) {
         this.countKittens = countKittens;
         this.countKittensExpected = countKittensExpected;
     }
@@ -27,7 +26,7 @@ public class FelineTestParametrized {
     @Test
     public void shouldGetCountKittensWhenGetKittens(){
         Feline feline = new Feline();
-        Assert.assertEquals(feline.getKittens(countKittens), countKittensExpected);
+        Assert.assertEquals(countKittensExpected, feline.getKittens(countKittens));
 
     }
 

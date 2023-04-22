@@ -15,15 +15,15 @@ public class CatTest {
     public void shoudSayMeowWhenGetSound(){
         Feline feline = new Feline();
         Cat cat = new Cat(feline);
-        Assert.assertEquals(cat.getSound(), "Мяу");
+        Assert.assertEquals("Мяу", cat.getSound());
     }
 
     @Mock
-    Feline catMocked = new Feline();
+    Feline felineMocked = new Feline();
     @Test
     public void shoudBeWhenGetFood() throws Exception{
-        Cat cat = new Cat(catMocked);
+        Cat cat = new Cat(felineMocked);
         cat.getFood();
-        Mockito.verify(catMocked, Mockito.times(1)).eatMeat();
+        Mockito.verify(felineMocked, Mockito.times(1)).eatMeat();
     }
 }
